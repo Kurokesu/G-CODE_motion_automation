@@ -1,0 +1,33 @@
+hadrware:
+  comport: COM3
+  baudrate: 115200
+  timeout: 5
+actuator:
+  axis: "A"
+  steps_per_mm: 10078.740
+  acceleration: 40.000
+  max_speed: 250.0
+  homing_feed: 50
+  homing_seek: 150
+  homing_pulloff: 5
+  pull_back: -7.5
+  send_calibration_on_init: true
+power:
+  motor_drive_power: 31
+  motor_idle_power: 16
+  send_motor_power_on_init: false
+motion:
+  rapid_drive_speed: 250.0
+  drive_speed: 10
+  start_distance: 10
+  steps: 10
+  distance: 1.0
+  return_home_after_complete: true
+  repeat: false
+shutter:
+  pre_shutter_wait: 1.0
+  focus_wait_time: 1.0
+  frames_to_capture_per_step: 1
+  shutter_press_time: 0.5
+  post_shutter_wait_time: 0
+generated_gcode: []
