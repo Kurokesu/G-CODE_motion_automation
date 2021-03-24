@@ -32,14 +32,13 @@ ser.flushOutput()
 
 jog_steps = config["actuator"]["jog_length_rough"]
 
-
 def on_press(key):
     global jog_steps
 
     try:
         #print('alphanumeric key {0} pressed'.format(key.char))
 
-        if key.char == "s" or key.char == "S":
+        if key.char == "s" or key.char == "S":            
             cmd = "$J=G91 "+config["actuator"]["axis"]+str(jog_steps)+" F"+str(config["actuator"]["jog_length_speed"])
             ser.write(bytes(cmd+'\n', 'utf8'))
             resp = ser.readline().decode("utf-8").strip()
@@ -65,18 +64,18 @@ def on_release(key):
 
     #print('{0} released'.format(key))
 
-    #if key == "a" or key == "s" or key == "A" or key == "S":
     cmd = b"\x85"
     ser.write(cmd)
+
     cmd = "?"
     ser.write(bytes(cmd, 'utf8'))
     r1 = ser.readline().decode("utf-8").strip()
-    #print(r1)
     text = r1[1:-1]
     feedback_split = text.split("|")
     positions = feedback_split[1].split(":")[1]
     positions = positions.split(",")
     axis = ["X", "Y", "Z", "A"].index(config["actuator"]["axis"])
+    config["actuator"]["jog_position"] = float(positions[axis])
     print(positions[axis], "mm")
 
     if key == keyboard.Key.shift:
@@ -89,3 +88,6 @@ def on_release(key):
 # Collect events until released
 with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
     listener.join()
+
+with open(config_file_name, 'w') as file:
+    yaml.dump(config, file, sort_keys=False)

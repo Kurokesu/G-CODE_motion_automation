@@ -15,6 +15,7 @@ actuator:
   jog_length_fine: 0.01
   jog_length_speed: 100
   send_calibration_on_init: true
+  jog_position: -2.581
 power:
   motor_drive_power: 31
   motor_idle_power: 10
