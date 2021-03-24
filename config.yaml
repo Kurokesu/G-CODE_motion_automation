@@ -11,6 +11,9 @@ actuator:
   homing_seek: 150
   homing_pulloff: 5
   pull_back: -7.5
+  jog_length_rough: 0.1
+  jog_length_fine: 0.01
+  jog_length_speed: 100
   send_calibration_on_init: true
 power:
   motor_drive_power: 31
