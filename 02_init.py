@@ -23,7 +23,7 @@ def wait_idle(ser):
         ser.timeout = 0.2
         cmd = "?"
 
-        ser.write(bytes(cmd+'\n', 'utf8'))
+        ser.write(bytes(cmd, 'utf8'))
         r1 = ser.readline().decode("utf-8").strip()
 
         #self.__ser_send(ser, cmd, monitor=False)
@@ -44,7 +44,6 @@ def wait_idle(ser):
                     if buffers >= 35:
                         if status == "Idle":
                             break
-            time.sleep(0.1)
         except:
             pass
 

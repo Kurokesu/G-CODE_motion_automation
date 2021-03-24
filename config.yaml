@@ -3,9 +3,9 @@ hadrware:
   baudrate: 115200
   timeout: 5
 actuator:
-  axis: "A"
-  steps_per_mm: 10078.740
-  acceleration: 40.000
+  axis: A
+  steps_per_mm: 10078.74
+  acceleration: 40.0
   max_speed: 250.0
   homing_feed: 50
   homing_seek: 150
@@ -14,7 +14,7 @@ actuator:
   send_calibration_on_init: true
 power:
   motor_drive_power: 31
-  motor_idle_power: 16
+  motor_idle_power: 10
   send_motor_power_on_init: false
 motion:
   rapid_drive_speed: 250.0
