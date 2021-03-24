@@ -8,9 +8,11 @@ print("Manually adjust actuator")
 print()
 print("S - moves forward")
 print("A - moves backwards")
-print("Q or ESC - exit tool")
 print()
+print("1-9 - set keypoint value")
 print("SHIFT - makes motion slower")
+print()
+print("Q or ESC - exit tool")
 print()
 
 
@@ -47,6 +49,21 @@ def on_press(key):
             cmd = "$J=G91 "+config["actuator"]["axis"]+"-"+str(jog_steps)+" F"+str(config["actuator"]["jog_length_speed"])
             ser.write(bytes(cmd+'\n', 'utf8'))
             resp = ser.readline().decode("utf-8").strip()
+
+        if key.char in ["1","2","3","4","5","6","7","8","9"]:
+            cmd = "?"
+            ser.write(bytes(cmd, 'utf8'))
+            r1 = ser.readline().decode("utf-8").strip()
+            text = r1[1:-1]
+            feedback_split = text.split("|")
+            positions = feedback_split[1].split(":")[1]
+            positions = positions.split(",")
+            axis = ["X", "Y", "Z", "A"].index(config["actuator"]["axis"])
+            config["actuator"]["jog_position"] = float(positions[axis])
+
+            kp_nr = int(key.char)-1
+            config["actuator"]["keypoints"][kp_nr] = float(positions[axis])
+            print("Keypoint", kp_nr, "=", config["actuator"]["keypoints"][kp_nr])
 
         if key.char == "q":
             return False
