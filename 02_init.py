@@ -113,12 +113,6 @@ ser.write(bytes(cmd+'\n', 'utf8'))
 resp = ser.readline().decode("utf-8").strip()
 print(" >", cmd, resp)
 
-# pull fwd
-distance = 15
-cmd = "G0 "+config["actuator"]["axis"]+str(distance)
-ser.write(bytes(cmd+'\n', 'utf8'))
-resp = ser.readline().decode("utf-8").strip()
-print(" >", cmd, resp)
 
 # wait till stop
 print("")
