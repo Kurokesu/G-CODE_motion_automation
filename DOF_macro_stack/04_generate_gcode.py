@@ -76,6 +76,8 @@ for step in range(int(config["motion"]["steps"])):
 
 gcode.append("") 
 if config["motion"]["return_home_after_complete"]:
+    gcode.append("; Set absolute movement mode")
+    gcode.append("G90")
     gcode.append("; Move to start position") 
     gcode.append("G1 "+config["actuator"]["axis"]+str(config["motion"]["keypoints"][0])+" F"+str(config["motion"]["rapid_drive_speed"])) 
 

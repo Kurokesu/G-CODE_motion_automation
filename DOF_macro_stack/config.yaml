@@ -1,7 +1,7 @@
 hadrware:
   comport: COM3
   baudrate: 115200
-  timeout: 5
+  timeout: 10
 actuator:
   axis: A
   steps_per_mm: 10078.74
@@ -14,7 +14,7 @@ actuator:
   jog_length_rough: 0.1
   jog_length_fine: 0.01
   jog_length_speed: 100
-  jog_position: 5.057
+  jog_position: 1.719
 power:
   motor_drive_power: 31
   motor_idle_power: 10
@@ -22,11 +22,11 @@ power:
 motion:
   rapid_drive_speed: 250.0
   drive_speed: 50.0
-  steps: 10.0
+  steps: 5.0
   return_home_after_complete: true
   keypoints:
-  - 0.038
-  - 5.057
+  - -1.0
+  - 1.719
   - 0
   - 0
   - 0
@@ -45,7 +45,7 @@ generated_gcode:
 - G90
 - ''
 - ; Move to start position
-- G1 A0.038 F250.0
+- G1 A-1.0 F250.0
 - ''
 - ; Set relative movement mode
 - G91
@@ -64,8 +64,8 @@ generated_gcode:
 - G4 P0.5
 - ''
 - ; ----------- NEW STEP ---------------
-- ; Moving by 0.5019mm
-- G1 A0.5019 F50.0
+- ; Moving by 0.5438000000000001mm
+- G1 A0.5438000000000001 F50.0
 - ; Wait till platform is stable
 - G4 P1.0
 - ; Trigger shutter
@@ -78,8 +78,8 @@ generated_gcode:
 - G4 P0.5
 - ''
 - ; ----------- NEW STEP ---------------
-- ; Moving by 0.5019mm
-- G1 A0.5019 F50.0
+- ; Moving by 0.5438000000000001mm
+- G1 A0.5438000000000001 F50.0
 - ; Wait till platform is stable
 - G4 P1.0
 - ; Trigger shutter
@@ -92,8 +92,8 @@ generated_gcode:
 - G4 P0.5
 - ''
 - ; ----------- NEW STEP ---------------
-- ; Moving by 0.5019mm
-- G1 A0.5019 F50.0
+- ; Moving by 0.5438000000000001mm
+- G1 A0.5438000000000001 F50.0
 - ; Wait till platform is stable
 - G4 P1.0
 - ; Trigger shutter
@@ -106,8 +106,8 @@ generated_gcode:
 - G4 P0.5
 - ''
 - ; ----------- NEW STEP ---------------
-- ; Moving by 0.5019mm
-- G1 A0.5019 F50.0
+- ; Moving by 0.5438000000000001mm
+- G1 A0.5438000000000001 F50.0
 - ; Wait till platform is stable
 - G4 P1.0
 - ; Trigger shutter
@@ -119,75 +119,7 @@ generated_gcode:
 - ; Wait post trigger
 - G4 P0.5
 - ''
-- ; ----------- NEW STEP ---------------
-- ; Moving by 0.5019mm
-- G1 A0.5019 F50.0
-- ; Wait till platform is stable
-- G4 P1.0
-- ; Trigger shutter
-- M8
-- ; Capturing...
-- G4 P0.5
-- ; Retract shutter
-- M9
-- ; Wait post trigger
-- G4 P0.5
-- ''
-- ; ----------- NEW STEP ---------------
-- ; Moving by 0.5019mm
-- G1 A0.5019 F50.0
-- ; Wait till platform is stable
-- G4 P1.0
-- ; Trigger shutter
-- M8
-- ; Capturing...
-- G4 P0.5
-- ; Retract shutter
-- M9
-- ; Wait post trigger
-- G4 P0.5
-- ''
-- ; ----------- NEW STEP ---------------
-- ; Moving by 0.5019mm
-- G1 A0.5019 F50.0
-- ; Wait till platform is stable
-- G4 P1.0
-- ; Trigger shutter
-- M8
-- ; Capturing...
-- G4 P0.5
-- ; Retract shutter
-- M9
-- ; Wait post trigger
-- G4 P0.5
-- ''
-- ; ----------- NEW STEP ---------------
-- ; Moving by 0.5019mm
-- G1 A0.5019 F50.0
-- ; Wait till platform is stable
-- G4 P1.0
-- ; Trigger shutter
-- M8
-- ; Capturing...
-- G4 P0.5
-- ; Retract shutter
-- M9
-- ; Wait post trigger
-- G4 P0.5
-- ''
-- ; ----------- NEW STEP ---------------
-- ; Moving by 0.5019mm
-- G1 A0.5019 F50.0
-- ; Wait till platform is stable
-- G4 P1.0
-- ; Trigger shutter
-- M8
-- ; Capturing...
-- G4 P0.5
-- ; Retract shutter
-- M9
-- ; Wait post trigger
-- G4 P0.5
-- ''
+- ; Set absolute movement mode
+- G90
 - ; Move to start position
-- G1 A0.038 F250.0
+- G1 A-1.0 F250.0

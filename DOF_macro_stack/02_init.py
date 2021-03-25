@@ -143,6 +143,9 @@ ser.write(bytes(cmd+'\n', 'utf8'))
 resp = ser.readline().decode("utf-8").strip()
 print(" >", cmd, resp)
 
+# G28.1 X0Y0Z0A0
+# G92 X0Y0Z0A0
+
 # wait till stop
 print("")
 print("Waiting to stop...")
