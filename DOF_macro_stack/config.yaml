@@ -32,16 +32,15 @@ power:
   send_motor_power_on_init: false
 motion:
   rapid_drive_speed: 250.0
-  drive_speed: 10
-  start_distance: 10
-  steps: 10
-  distance: 1.0
+  drive_speed: 50.0
+  steps: 10.0
   return_home_after_complete: true
   repeat: false
 shutter:
   pre_shutter_wait: 1.0
   focus_wait_time: 1.0
-  frames_to_capture_per_step: 1
+  frames_to_capture_per_step: 1.0
   shutter_press_time: 0.5
-  post_shutter_wait_time: 0
+  post_shutter_wait_time: 0.5
+  use_focus: false
 generated_gcode: []
