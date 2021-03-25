@@ -2,6 +2,9 @@ Commandline tool to control SCE2 controller. This is not very user friendly appl
 
 Primary use is designed for DOF stacking, but structure can be easily adapted to automate other processes.
 
+![Controller and actuators](motion.jpg)
+
+
 ### Useful links
 * Controller: https://wiki.kurokesu.com/books/sce2
 * Linear actuator: https://wiki.kurokesu.com/books/lsa1
