@@ -1,0 +1,4 @@
+pynput
+tqdm
+pyserial
+PyYAML
