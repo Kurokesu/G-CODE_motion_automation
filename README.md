@@ -1,4 +1,4 @@
-Simplified commandline tool to control SCE2 controller. Useful for DOF stacking, 360deg product photography and various other automation tasks.
+Commandline tool to control SCE2 controller. Primary use is designed for DOF stacking, but structure can be easily adapted to automate other processes. 
 
 * Controller: https://wiki.kurokesu.com/books/sce2
 * Linear actuator: https://wiki.kurokesu.com/books/lsa1
@@ -6,6 +6,8 @@ Simplified commandline tool to control SCE2 controller. Useful for DOF stacking,
 * Ordeding: https://www.kurokesu.com/shop/motion_systems
 
 ### 01_prepare.py - enter driver and actuator parameters
+
+This tool asks for many parameters about controller and attached actuator. These values are saved in `config.yaml` file and used by all other tools.
 
 ```
 Enter hardware parameters.
@@ -31,6 +33,8 @@ Press ENTER if value should not be changed.
 ```
 
 ### 02_init.py - motor homing and reference point calibration
+
+This tool sends configuration values to controller. Some of these values are stored in eeprom. Also moves actuator to home position.
 
 ```
  > $X ok
@@ -59,6 +63,8 @@ Waiting to stop...
 
 ### 03_manual_move.py - move actuator and provide keypoint positions for later use
 
+This tool is used to move actuator with keyboard. Use A and S keys to move back/forward, 1 and 2 keys to set keypoints. Press Q to exit.
+
 ```
 Manually adjust actuator
 
@@ -78,7 +84,9 @@ Keypoint 1 = 4.269
 4.269 mm
 ```
 
-### 04_generate_gcode.py - Enter desired step count and generate g-code for use with next tool
+### 04_generate_gcode.py - Enter desired step count and generate g-code
+
+This tool asks how many times to stop and generated g-code to be used with next tool.
 
 ```
 Enter motion parameters.
@@ -95,6 +103,8 @@ Preset points: 1 - start motion, 2 - end motion
 ```
 
 ### 05_drive.py - This tool moves actuator and operates camera shutter
+
+This is straight forward g-code send application.
 
 ```
 100%|███████████████████████████████████████████████████████████| 83/83 [00:15<00:00,  5.25it/s]
