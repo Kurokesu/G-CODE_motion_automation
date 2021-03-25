@@ -14,18 +14,7 @@ actuator:
   jog_length_rough: 0.1
   jog_length_fine: 0.01
   jog_length_speed: 100
-  send_calibration_on_init: true
-  jog_position: 2.302
-  keypoints:
-  - -7.766
-  - -2.931
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  jog_position: 5.057
 power:
   motor_drive_power: 31
   motor_idle_power: 10
@@ -35,12 +24,170 @@ motion:
   drive_speed: 50.0
   steps: 10.0
   return_home_after_complete: true
-  repeat: false
+  keypoints:
+  - 0.038
+  - 5.057
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
 shutter:
   pre_shutter_wait: 1.0
-  focus_wait_time: 1.0
-  frames_to_capture_per_step: 1.0
+  frames_to_capture_per_step: 1
   shutter_press_time: 0.5
   post_shutter_wait_time: 0.5
-  use_focus: false
-generated_gcode: []
+generated_gcode:
+- ; Generator version 0.1.0
+- ; Set absolute movement mode
+- G90
+- ''
+- ; Move to start position
+- G1 A0.038 F250.0
+- ''
+- ; Set relative movement mode
+- G91
+- ''
+- ''
+- ; ----------- NEW STEP ---------------
+- ; Wait till platform is stable
+- G4 P1.0
+- ; Trigger shutter
+- M8
+- ; Capturing...
+- G4 P0.5
+- ; Retract shutter
+- M9
+- ; Wait post trigger
+- G4 P0.5
+- ''
+- ; ----------- NEW STEP ---------------
+- ; Moving by 0.5019mm
+- G1 A0.5019 F50.0
+- ; Wait till platform is stable
+- G4 P1.0
+- ; Trigger shutter
+- M8
+- ; Capturing...
+- G4 P0.5
+- ; Retract shutter
+- M9
+- ; Wait post trigger
+- G4 P0.5
+- ''
+- ; ----------- NEW STEP ---------------
+- ; Moving by 0.5019mm
+- G1 A0.5019 F50.0
+- ; Wait till platform is stable
+- G4 P1.0
+- ; Trigger shutter
+- M8
+- ; Capturing...
+- G4 P0.5
+- ; Retract shutter
+- M9
+- ; Wait post trigger
+- G4 P0.5
+- ''
+- ; ----------- NEW STEP ---------------
+- ; Moving by 0.5019mm
+- G1 A0.5019 F50.0
+- ; Wait till platform is stable
+- G4 P1.0
+- ; Trigger shutter
+- M8
+- ; Capturing...
+- G4 P0.5
+- ; Retract shutter
+- M9
+- ; Wait post trigger
+- G4 P0.5
+- ''
+- ; ----------- NEW STEP ---------------
+- ; Moving by 0.5019mm
+- G1 A0.5019 F50.0
+- ; Wait till platform is stable
+- G4 P1.0
+- ; Trigger shutter
+- M8
+- ; Capturing...
+- G4 P0.5
+- ; Retract shutter
+- M9
+- ; Wait post trigger
+- G4 P0.5
+- ''
+- ; ----------- NEW STEP ---------------
+- ; Moving by 0.5019mm
+- G1 A0.5019 F50.0
+- ; Wait till platform is stable
+- G4 P1.0
+- ; Trigger shutter
+- M8
+- ; Capturing...
+- G4 P0.5
+- ; Retract shutter
+- M9
+- ; Wait post trigger
+- G4 P0.5
+- ''
+- ; ----------- NEW STEP ---------------
+- ; Moving by 0.5019mm
+- G1 A0.5019 F50.0
+- ; Wait till platform is stable
+- G4 P1.0
+- ; Trigger shutter
+- M8
+- ; Capturing...
+- G4 P0.5
+- ; Retract shutter
+- M9
+- ; Wait post trigger
+- G4 P0.5
+- ''
+- ; ----------- NEW STEP ---------------
+- ; Moving by 0.5019mm
+- G1 A0.5019 F50.0
+- ; Wait till platform is stable
+- G4 P1.0
+- ; Trigger shutter
+- M8
+- ; Capturing...
+- G4 P0.5
+- ; Retract shutter
+- M9
+- ; Wait post trigger
+- G4 P0.5
+- ''
+- ; ----------- NEW STEP ---------------
+- ; Moving by 0.5019mm
+- G1 A0.5019 F50.0
+- ; Wait till platform is stable
+- G4 P1.0
+- ; Trigger shutter
+- M8
+- ; Capturing...
+- G4 P0.5
+- ; Retract shutter
+- M9
+- ; Wait post trigger
+- G4 P0.5
+- ''
+- ; ----------- NEW STEP ---------------
+- ; Moving by 0.5019mm
+- G1 A0.5019 F50.0
+- ; Wait till platform is stable
+- G4 P1.0
+- ; Trigger shutter
+- M8
+- ; Capturing...
+- G4 P0.5
+- ; Retract shutter
+- M9
+- ; Wait post trigger
+- G4 P0.5
+- ''
+- ; Move to start position
+- G1 A0.038 F250.0

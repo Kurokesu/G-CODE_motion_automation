@@ -63,8 +63,8 @@ def on_press(key):
             config["actuator"]["jog_position"] = float(positions[axis])
 
             kp_nr = int(key.char)-1
-            config["actuator"]["keypoints"][kp_nr] = float(positions[axis])
-            print("Keypoint", kp_nr, "=", config["actuator"]["keypoints"][kp_nr])
+            config["motion"]["keypoints"][kp_nr] = float(positions[axis])
+            print("Keypoint", kp_nr, "=", config["motion"]["keypoints"][kp_nr])
 
         if key.char == "q":
             return False
