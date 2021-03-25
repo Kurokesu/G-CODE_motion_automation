@@ -1,9 +1,15 @@
-Commandline tool to control SCE2 controller. Primary use is designed for DOF stacking, but structure can be easily adapted to automate other processes. 
+Commandline tool to control SCE2 controller. This is not very user friendly application, but it serves as base tool to automate some tasks and provide building blocks for custom application creation. Tyny footprint and lack of library overuse lets it to be used with bare minimal computers like Raspberry Pi (no modifications neede) or ESP32 (porting needed).
 
+Primary use is designed for DOF stacking, but structure can be easily adapted to automate other processes.
+
+### Useful links
 * Controller: https://wiki.kurokesu.com/books/sce2
 * Linear actuator: https://wiki.kurokesu.com/books/lsa1
 * Rotary actuator: https://wiki.kurokesu.com/books/rsb1
 * Ordeding: https://www.kurokesu.com/shop/motion_systems
+
+### Running
+After installing Python, run `pip: -r requirements.txt` command to install required packages. Then run each file one by one to perform different tasks.
 
 ### 01_prepare.py - enter driver and actuator parameters
 
