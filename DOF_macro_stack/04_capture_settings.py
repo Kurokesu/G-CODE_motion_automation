@@ -1,0 +1,1 @@
+# enter motion setings and generate g-code

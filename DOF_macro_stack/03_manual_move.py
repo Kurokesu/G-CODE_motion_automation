@@ -40,6 +40,7 @@ def on_press(key):
     try:
         #print('alphanumeric key {0} pressed'.format(key.char))
 
+        # TODO: check buffer - do not send more commands if full, keep space for stop motion command
         if key.char == "s" or key.char == "S":            
             cmd = "$J=G91 "+config["actuator"]["axis"]+str(jog_steps)+" F"+str(config["actuator"]["jog_length_speed"])
             ser.write(bytes(cmd+'\n', 'utf8'))

@@ -15,7 +15,7 @@ actuator:
   jog_length_fine: 0.01
   jog_length_speed: 100
   send_calibration_on_init: true
-  jog_position: -2.931
+  jog_position: 2.302
   keypoints:
   - -7.766
   - -2.931
